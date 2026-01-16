@@ -37,7 +37,7 @@ function highlightNavigation() {
 
 window.addEventListener('scroll', highlightNavigation);
 
-// Add fade-in animation on scroll for venture and post cards
+// Add fade-in animation on scroll for cards
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -60,13 +60,15 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all cards
+// Observe all cards and timeline items
 document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.venture-card, .post-card');
-    cards.forEach(card => observer.observe(card));
+    const animateElements = document.querySelectorAll(
+        '.project-card, .timeline-item, .insight-featured, .education-item'
+    );
+    animateElements.forEach(element => observer.observe(element));
 });
 
-// Add navbar background on scroll
+// Enhanced navbar shadow on scroll
 const navbar = document.querySelector('.navbar');
 let lastScroll = 0;
 
@@ -81,3 +83,61 @@ window.addEventListener('scroll', () => {
 
     lastScroll = currentScroll;
 });
+
+// Add loading state for external links
+document.querySelectorAll('a[target="_blank"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const originalText = this.textContent;
+        // Visual feedback that link was clicked (optional enhancement)
+        this.style.opacity = '0.7';
+        setTimeout(() => {
+            this.style.opacity = '1';
+        }, 200);
+    });
+});
+
+// Skill item animation on hover
+document.querySelectorAll('.skill-item').forEach(skill => {
+    skill.addEventListener('mouseenter', function() {
+        this.style.backgroundColor = '#e8f4f8';
+    });
+
+    skill.addEventListener('mouseleave', function() {
+        this.style.backgroundColor = '#f8f9fa';
+    });
+});
+
+// Stats counter animation when in view
+function animateStats() {
+    const stats = document.querySelectorAll('.stat-number');
+
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const text = target.textContent;
+
+                // Add a subtle pulse animation
+                target.style.animation = 'pulse 0.5s ease-out';
+
+                statsObserver.unobserve(target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    stats.forEach(stat => statsObserver.observe(stat));
+}
+
+// Initialize stats animation
+document.addEventListener('DOMContentLoaded', animateStats);
+
+// Add CSS animation for pulse
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+`;
+document.head.appendChild(style);

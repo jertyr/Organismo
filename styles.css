@@ -709,20 +709,21 @@ footer p {
    ======================================== */
 
 body.sim-city-mode {
-    background: #008080;
-    color: #000;
-    cursor: default;
+    background: #008080 !important;
+    color: #000 !important;
+    cursor: default !important;
+    animation: none !important;
 }
 
 body.sim-city-mode::before {
-    display: none;
+    display: none !important;
 }
 
 body.sim-city-mode .container {
-    background: #c0c0c0;
-    border: 3px outset #dfdfdf;
-    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
-    animation: none;
+    background: #c0c0c0 !important;
+    border: 3px outset #dfdfdf !important;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3) !important;
+    animation: none !important;
 }
 
 body.sim-city-mode .container::before {
@@ -741,11 +742,11 @@ body.sim-city-mode .container::after {
 }
 
 body.sim-city-mode header {
-    background: linear-gradient(180deg, #0a246a 0%, #000080 100%);
-    border-bottom: 0;
-    border: 2px outset #dfdfdf;
-    animation: none;
-    margin: 0;
+    background: linear-gradient(180deg, #0a246a 0%, #000080 100%) !important;
+    border-bottom: 0 !important;
+    border: 2px outset #dfdfdf !important;
+    animation: none !important;
+    margin: 0 !important;
 }
 
 body.sim-city-mode header::before {
@@ -759,11 +760,11 @@ body.sim-city-mode header::after {
 }
 
 body.sim-city-mode h1 {
-    color: #ffffff;
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
-    animation: none;
-    font-size: 42px;
-    letter-spacing: 4px;
+    color: #ffffff !important;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5) !important;
+    animation: none !important;
+    font-size: 42px !important;
+    letter-spacing: 4px !important;
 }
 
 body.sim-city-mode .subtitle {
@@ -800,15 +801,15 @@ body.sim-city-mode .intro a:hover {
 }
 
 body.sim-city-mode main {
-    background-color: #c0c0c0;
+    background-color: #c0c0c0 !important;
 }
 
 body.sim-city-mode section {
-    background: #c0c0c0;
-    border: 3px outset #dfdfdf;
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+    background: #c0c0c0 !important;
+    border: 3px outset #dfdfdf !important;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2) !important;
     transform: none !important;
-    transition: all 0.2s;
+    transition: all 0.2s !important;
 }
 
 body.sim-city-mode section:hover {
@@ -818,12 +819,12 @@ body.sim-city-mode section:hover {
 }
 
 body.sim-city-mode h2 {
-    background: linear-gradient(180deg, #0a246a 0%, #000080 100%);
-    color: #ffffff;
-    border-bottom: 0;
-    border: 2px outset #000080;
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
-    animation: none;
+    background: linear-gradient(180deg, #0a246a 0%, #000080 100%) !important;
+    color: #ffffff !important;
+    border-bottom: 0 !important;
+    border: 2px outset #000080 !important;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5) !important;
+    animation: none !important;
 }
 
 body.sim-city-mode h2::before,
@@ -956,9 +957,9 @@ body.sim-city-mode #contact p {
 }
 
 body.sim-city-mode footer {
-    background: #c0c0c0;
-    border-top: 3px outset #dfdfdf;
-    animation: none;
+    background: #c0c0c0 !important;
+    border-top: 3px outset #dfdfdf !important;
+    animation: none !important;
 }
 
 body.sim-city-mode footer::before {

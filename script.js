@@ -12,35 +12,52 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Ultra Chaos Mode Toggle
-window.toggleChaos = function() {
-    console.log('Toggle chaos called!'); // Debug
+// Chaos Level Slider
+function setChaosLevel(level) {
     const body = document.body;
-    const button = document.getElementById('chaosButton');
-    const buttonText = document.getElementById('chaosText');
+    const indicator = document.getElementById('levelIndicator');
 
-    if (body.classList.contains('ultra-chaos')) {
-        console.log('Deactivating chaos mode');
-        body.classList.remove('ultra-chaos');
-        buttonText.textContent = '⚡ ACTIVATE ULTRA CHAOS MODE ⚡';
-    } else {
-        console.log('Activating ULTRA CHAOS MODE!');
-        body.classList.add('ultra-chaos');
-        buttonText.textContent = '🛑 DEACTIVATE ULTRA CHAOS MODE 🛑';
+    // Remove all mode classes
+    body.classList.remove('professional-mode', 'ultra-chaos');
 
-        // Play a sound effect if you dare
-        console.log('🔥🔥🔥 ULTRA CHAOS MODE ACTIVATED 🔥🔥🔥');
-        console.log('Warning: Maximum chaos levels detected!');
-        console.log('Everything is spinning and rainbow now!');
+    switch(level) {
+        case 1:
+            body.classList.add('professional-mode');
+            indicator.textContent = '📊 LEVEL 1: PROFESSIONAL MODE';
+            indicator.style.color = '#4a5568';
+            indicator.style.borderColor = '#cbd5e0';
+            console.log('Professional mode activated - Clean and buttoned up');
+            break;
+        case 2:
+            // Default cyberpunk chaos - no class needed
+            indicator.textContent = '⚡ LEVEL 2: CYBERPUNK CHAOS ⚡';
+            indicator.style.color = '#FF00FF';
+            indicator.style.borderColor = '#FF00FF';
+            console.log('Cyberpunk Chaos mode - Default unhinged aesthetic');
+            break;
+        case 3:
+            body.classList.add('ultra-chaos');
+            indicator.textContent = '🔥 LEVEL 3: ULTRA CHAOS MODE 🔥';
+            indicator.style.color = '#FF0000';
+            indicator.style.borderColor = '#FF0000';
+            console.log('🔥🔥🔥 ULTRA CHAOS MODE ACTIVATED 🔥🔥🔥');
+            console.log('Warning: Maximum chaos levels detected!');
+            console.log('Everything is spinning and rainbow now!');
+            console.log('Comic Sans has been deployed!');
+            break;
     }
 }
 
-// Also set up event listener as backup
+// Set up slider event listener
 document.addEventListener('DOMContentLoaded', function() {
-    const chaosButton = document.getElementById('chaosButton');
-    if (chaosButton) {
-        chaosButton.addEventListener('click', function() {
-            window.toggleChaos();
+    const chaosSlider = document.getElementById('chaosSlider');
+    if (chaosSlider) {
+        // Set initial level to 2 (cyberpunk chaos)
+        setChaosLevel(2);
+
+        chaosSlider.addEventListener('input', function() {
+            const level = parseInt(this.value);
+            setChaosLevel(level);
         });
     }
 });

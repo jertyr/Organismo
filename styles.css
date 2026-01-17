@@ -35,8 +35,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Header */
 header {
-    margin-bottom: 100px;
-    padding-bottom: 60px;
+    margin-bottom: 60px;
+    padding-bottom: 40px;
     border-bottom: 1px solid #e8e8e8;
 }
 
@@ -75,11 +75,11 @@ h1 {
 
 /* Main Content */
 main {
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 }
 
 section {
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 }
 
 section:last-child {
@@ -255,8 +255,8 @@ a:hover {
 
 /* Footer */
 footer {
-    margin-top: 100px;
-    padding-top: 48px;
+    margin-top: 60px;
+    padding-top: 40px;
     border-top: 1px solid #e8e8e8;
     text-align: center;
 }
@@ -294,16 +294,16 @@ footer p {
     }
 
     header {
-        margin-bottom: 80px;
-        padding-bottom: 48px;
+        margin-bottom: 50px;
+        padding-bottom: 36px;
     }
 
     section {
-        margin-bottom: 80px;
+        margin-bottom: 50px;
     }
 
     main {
-        margin-bottom: 80px;
+        margin-bottom: 50px;
     }
 }
 

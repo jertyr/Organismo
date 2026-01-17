@@ -822,6 +822,12 @@ body.sim-city-mode section {
     margin: 0 0 50px 0 !important;
 }
 
+body.sim-city-mode #projects,
+body.sim-city-mode #contact {
+    border-top: 1px solid #e8e8e8 !important;
+    padding-top: 50px !important;
+}
+
 body.sim-city-mode section:last-of-type {
     border-bottom: none !important;
     margin-bottom: 60px !important;
@@ -1125,6 +1131,11 @@ body.sim-city-mode .mode-btn.active::after {
         margin: 0 0 35px 0 !important;
     }
 
+    body.sim-city-mode #projects,
+    body.sim-city-mode #contact {
+        padding-top: 35px !important;
+    }
+
     body.sim-city-mode h2 {
         font-size: 24px !important;
         margin-bottom: 18px !important;
@@ -1172,6 +1183,11 @@ body.sim-city-mode .mode-btn.active::after {
     body.sim-city-mode section {
         padding: 0 0 28px 0 !important;
         margin: 0 0 28px 0 !important;
+    }
+
+    body.sim-city-mode #projects,
+    body.sim-city-mode #contact {
+        padding-top: 28px !important;
     }
 
     body.sim-city-mode h2 {

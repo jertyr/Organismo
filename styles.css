@@ -1229,6 +1229,34 @@ body.ultra-chaos .intro {
     .project p {
         font-size: 13px;
     }
+
+    .slider-wrapper {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .chaos-slider {
+        width: 100%;
+    }
+
+    .level-label {
+        font-size: 11px;
+    }
+
+    /* Ultra chaos mode mobile overrides */
+    body.ultra-chaos h1 {
+        font-size: 36px !important;
+    }
+
+    body.ultra-chaos .container::before {
+        font-size: 12px !important;
+        padding: 6px 12px !important;
+        top: -25px !important;
+    }
+
+    body.ultra-chaos header::before {
+        font-size: 80px !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1254,5 +1282,19 @@ body.ultra-chaos .intro {
     .container::before {
         font-size: 9px;
         padding: 4px 12px;
+    }
+
+    /* Ultra chaos mode small mobile overrides */
+    body.ultra-chaos h1 {
+        font-size: 28px !important;
+    }
+
+    body.ultra-chaos header::before {
+        font-size: 60px !important;
+    }
+
+    body.ultra-chaos .container::before {
+        font-size: 10px !important;
+        padding: 4px 8px !important;
     }
 }

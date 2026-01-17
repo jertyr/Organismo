@@ -629,85 +629,59 @@ footer::before {
     margin-bottom: 20px;
 }
 
-.chaos-slider-container {
+.mode-buttons {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     gap: 12px;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
     background: rgba(0, 0, 0, 0.8);
     border: 3px solid #00FFFF;
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
 }
 
-.chaos-label {
+.mode-btn {
     font-family: 'Courier New', monospace;
-    font-size: 14px;
-    font-weight: 900;
-    letter-spacing: 3px;
-    color: #FFFF00;
-    text-shadow: 0 0 10px #FFFF00;
-}
-
-.slider-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    width: 100%;
-    max-width: 500px;
-}
-
-.level-label {
-    font-family: 'Courier New', monospace;
-    font-size: 10px;
+    font-size: 16px;
     font-weight: 900;
     letter-spacing: 2px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
     color: #00FFFF;
+    border: 3px solid #00FFFF;
+    cursor: pointer;
     text-transform: uppercase;
+    transition: all 0.3s;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    text-shadow: 0 0 8px #00FFFF;
+    position: relative;
 }
 
-.chaos-slider {
-    flex: 1;
-    -webkit-appearance: none;
-    appearance: none;
-    height: 12px;
-    background: linear-gradient(90deg, #00FF00 0%, #FFFF00 50%, #FF00FF 100%);
-    outline: none;
-    border: 3px solid #000;
-    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
-    cursor: pointer;
+.mode-btn:hover {
+    background: linear-gradient(135deg, #FF00FF 0%, #00FFFF 100%);
+    color: #000;
+    border-color: #FFFF00;
+    box-shadow: 0 0 25px rgba(255, 255, 0, 0.6);
+    text-shadow: none;
+    transform: translateY(-2px);
 }
 
-.chaos-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 30px;
-    height: 30px;
-    background: linear-gradient(45deg, #FF00FF, #00FFFF);
-    border: 3px solid #000;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+.mode-btn.active {
+    background: linear-gradient(135deg, #FFFF00 0%, #FF00FF 100%);
+    color: #000;
+    border-color: #FFFF00;
+    box-shadow: 0 0 30px rgba(255, 255, 0, 0.8), inset 0 0 20px rgba(255, 255, 255, 0.3);
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
 }
 
-.chaos-slider::-moz-range-thumb {
-    width: 30px;
-    height: 30px;
-    background: linear-gradient(45deg, #FF00FF, #00FFFF);
-    border: 3px solid #000;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+.mode-btn.active::before {
+    content: "▶ ";
+    animation: constructionBlink 1s infinite;
 }
 
-.level-indicator {
-    font-family: 'Courier New', monospace;
-    font-size: 14px;
-    font-weight: 900;
-    letter-spacing: 2px;
-    color: #FF00FF;
-    text-shadow: 0 0 10px #FF00FF;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 8px 16px;
-    border: 2px solid #FF00FF;
+.mode-btn.active::after {
+    content: " ◀";
+    animation: constructionBlink 1s infinite 0.5s;
 }
 
 @keyframes gradientShift {
@@ -731,260 +705,298 @@ footer p {
 }
 
 /* ========================================
-   LEVEL 1: PROFESSIONAL MODE - Buttoned Up
+   NORMAL MODE - Classic Sim City 2000 Aesthetic
    ======================================== */
 
-body.professional-mode {
-    background: #f5f5f5;
-    color: #333;
+body.sim-city-mode {
+    background: #008080;
+    color: #000;
     cursor: default;
 }
 
-body.professional-mode::before {
+body.sim-city-mode::before {
     display: none;
 }
 
-body.professional-mode .container {
-    background: #ffffff;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+body.sim-city-mode .container {
+    background: #c0c0c0;
+    border: 3px outset #dfdfdf;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
     animation: none;
 }
 
-body.professional-mode .container::before {
-    display: none;
-}
-
-body.professional-mode .container::after {
-    display: none;
-}
-
-body.professional-mode header {
-    background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
-    border-bottom: 3px solid #cbd5e0;
+body.sim-city-mode .container::before {
+    content: "SimConstruction 2000";
+    top: -30px;
+    background: #c0c0c0;
+    color: #000;
+    padding: 4px 12px;
+    font-size: 11px;
+    border: 2px outset #dfdfdf;
     animation: none;
 }
 
-body.professional-mode header::before {
+body.sim-city-mode .container::after {
     display: none;
 }
 
-body.professional-mode header::after {
+body.sim-city-mode header {
+    background: linear-gradient(180deg, #0a246a 0%, #000080 100%);
+    border-bottom: 0;
+    border: 2px outset #dfdfdf;
+    animation: none;
+    margin: 0;
+}
+
+body.sim-city-mode header::before {
+    content: "🏗";
+    color: rgba(255, 255, 255, 0.3);
+    animation: none;
+}
+
+body.sim-city-mode header::after {
     display: none;
 }
 
-body.professional-mode h1 {
+body.sim-city-mode h1 {
     color: #ffffff;
-    text-shadow: none;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
     animation: none;
     font-size: 42px;
+    letter-spacing: 4px;
 }
 
-body.professional-mode .subtitle {
-    background-color: #e2e8f0;
-    color: #2d3748;
-    border: 2px solid #cbd5e0;
+body.sim-city-mode .subtitle {
+    background-color: #c0c0c0;
+    color: #000;
+    border: 2px outset #dfdfdf;
     box-shadow: none;
     text-shadow: none;
+    padding: 6px 12px;
 }
 
-body.professional-mode .intro {
-    background-color: #f7fafc;
-    color: #4a5568;
-    border: 2px solid #e2e8f0;
-    box-shadow: none;
-}
-
-body.professional-mode .intro::before {
-    color: #718096;
-}
-
-body.professional-mode .intro a {
-    color: #3182ce;
-    border-bottom: 1px solid #3182ce;
-    text-shadow: none;
-}
-
-body.professional-mode .intro a:hover {
-    background-color: #3182ce;
-    color: #ffffff;
-    box-shadow: none;
-}
-
-body.professional-mode main {
+body.sim-city-mode .intro {
     background-color: #ffffff;
-}
-
-body.professional-mode section {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    transform: none !important;
-    transition: box-shadow 0.2s;
-}
-
-body.professional-mode section:hover {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transform: none !important;
-}
-
-body.professional-mode h2 {
-    background: #2d3748;
-    color: #ffffff;
-    border-bottom: 3px solid #4a5568;
+    color: #000;
+    border: 2px inset #808080;
+    box-shadow: none;
     text-shadow: none;
+}
+
+body.sim-city-mode .intro::before {
+    color: #000080;
+}
+
+body.sim-city-mode .intro a {
+    color: #000080;
+    border-bottom: 1px solid #000080;
+    text-shadow: none;
+}
+
+body.sim-city-mode .intro a:hover {
+    background-color: #000080;
+    color: #ffffff;
+    box-shadow: none;
+}
+
+body.sim-city-mode main {
+    background-color: #c0c0c0;
+}
+
+body.sim-city-mode section {
+    background: #c0c0c0;
+    border: 3px outset #dfdfdf;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+    transform: none !important;
+    transition: all 0.2s;
+}
+
+body.sim-city-mode section:hover {
+    border-style: outset;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+    transform: none !important;
+}
+
+body.sim-city-mode h2 {
+    background: linear-gradient(180deg, #0a246a 0%, #000080 100%);
+    color: #ffffff;
+    border-bottom: 0;
+    border: 2px outset #000080;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
     animation: none;
 }
 
-body.professional-mode h2::before,
-body.professional-mode h2::after {
+body.sim-city-mode h2::before,
+body.sim-city-mode h2::after {
     display: none;
 }
 
-body.professional-mode h3 {
-    color: #2d3748;
+body.sim-city-mode h3 {
+    color: #000080;
     text-shadow: none;
 }
 
-body.professional-mode p {
-    color: #4a5568;
+body.sim-city-mode p {
+    color: #000;
     text-shadow: none;
 }
 
-body.professional-mode a {
-    color: #3182ce;
-    border-bottom: 1px solid #3182ce;
+body.sim-city-mode a {
+    color: #000080;
+    border-bottom: 1px solid #000080;
     text-shadow: none;
 }
 
-body.professional-mode a:hover {
+body.sim-city-mode a:hover {
     color: #ffffff;
-    background-color: #3182ce;
+    background-color: #000080;
     box-shadow: none;
 }
 
-body.professional-mode .post-tile {
-    background: #f7fafc;
-    border: 1px solid #e2e8f0;
+body.sim-city-mode .post-tile {
+    background: #ffffff;
+    border: 2px inset #808080;
     transform: none !important;
+    padding: 12px;
 }
 
-body.professional-mode .post-tile:hover {
-    border-color: #cbd5e0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+body.sim-city-mode .post-tile:hover {
+    border: 2px outset #dfdfdf;
+    box-shadow: none;
     transform: none !important;
+    background: #f0f0f0;
 }
 
-body.professional-mode .post-tile::before {
+body.sim-city-mode .post-tile::before {
     display: none;
 }
 
-body.professional-mode .post-meta {
-    background-color: #edf2f7;
-    color: #2d3748;
-    border: 2px solid #cbd5e0;
+body.sim-city-mode .post-meta {
+    background-color: #c0c0c0;
+    color: #000;
+    border: 2px outset #dfdfdf;
     box-shadow: none;
+    font-size: 9px;
 }
 
-body.professional-mode .post-tile h3 a {
-    color: #2d3748;
+body.sim-city-mode .post-tile h3 a {
+    color: #000080;
     border-bottom: 1px solid transparent;
 }
 
-body.professional-mode .post-tile h3 a:hover {
-    color: #3182ce;
+body.sim-city-mode .post-tile h3 a:hover {
+    color: #ffffff;
+    background-color: #000080;
     text-shadow: none;
 }
 
-body.professional-mode .post-tile p {
-    color: #4a5568;
+body.sim-city-mode .post-tile p {
+    color: #000;
 }
 
-body.professional-mode .read-more {
-    color: #3182ce;
-    border-bottom: 1px solid #3182ce;
+body.sim-city-mode .read-more {
+    color: #000080;
+    border-bottom: 1px solid #000080;
 }
 
-body.professional-mode .read-more:hover {
+body.sim-city-mode .read-more:hover {
     color: #ffffff;
-    background-color: #3182ce;
+    background-color: #000080;
     box-shadow: none;
 }
 
-body.professional-mode .project {
-    background: #f7fafc;
-    border: 1px solid #e2e8f0;
+body.sim-city-mode .project {
+    background: #ffffff;
+    border: 3px inset #808080;
     transition: all 0.2s;
     transform: none !important;
+    padding: 16px;
 }
 
-body.professional-mode .project:hover {
-    border-color: #cbd5e0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+body.sim-city-mode .project:hover {
+    border: 3px outset #dfdfdf;
+    background: #f0f0f0;
+    box-shadow: none;
     transform: none !important;
 }
 
-body.professional-mode .project::before {
+body.sim-city-mode .project::before {
     display: none;
 }
 
-body.professional-mode .project h3 {
-    background: #4a5568;
+body.sim-city-mode .project h3 {
+    background: linear-gradient(180deg, #0a246a 0%, #000080 100%);
     color: #ffffff;
-    border: 2px solid #2d3748;
-    text-shadow: none;
+    border: 2px outset #000080;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
 }
 
-body.professional-mode .project h3::before {
+body.sim-city-mode .project h3::before {
     display: none;
 }
 
-body.professional-mode .project h3 a {
+body.sim-city-mode .project h3 a {
     color: #ffffff;
-    border-bottom: 1px solid #cbd5e0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-body.professional-mode .project h3 a:hover {
-    background-color: #2d3748;
+body.sim-city-mode .project h3 a:hover {
+    background-color: #0a246a;
     box-shadow: none;
 }
 
-body.professional-mode .project p {
-    color: #4a5568;
+body.sim-city-mode .project p {
+    color: #000;
 }
 
-body.professional-mode #contact p {
-    background: #f7fafc;
-    border: 1px solid #e2e8f0;
+body.sim-city-mode #contact p {
+    background: #ffffff;
+    border: 2px inset #808080;
     box-shadow: none;
 }
 
-body.professional-mode footer {
-    background: #2d3748;
-    border-top: 3px solid #4a5568;
+body.sim-city-mode footer {
+    background: #c0c0c0;
+    border-top: 3px outset #dfdfdf;
     animation: none;
 }
 
-body.professional-mode footer::before {
+body.sim-city-mode footer::before {
     display: none;
 }
 
-body.professional-mode footer p {
-    color: #e2e8f0;
-    background-color: #4a5568;
-    border: 2px solid #718096;
+body.sim-city-mode footer p {
+    color: #000;
+    background-color: #c0c0c0;
+    border: 2px outset #dfdfdf;
     box-shadow: none;
     text-shadow: none;
 }
 
-body.professional-mode .chaos-slider-container {
-    border-color: #cbd5e0;
+body.sim-city-mode .mode-buttons {
+    border: 2px inset #808080;
     box-shadow: none;
+    background: #c0c0c0;
 }
 
-body.professional-mode .level-indicator {
-    color: #4a5568;
-    border-color: #cbd5e0;
+body.sim-city-mode .mode-btn {
+    background: #c0c0c0;
+    color: #000;
+    border: 2px outset #dfdfdf;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+body.sim-city-mode .mode-btn:hover {
+    background: #dfdfdf;
+    color: #000;
+    border: 2px outset #ffffff;
+}
+
+body.sim-city-mode .mode-btn.active {
+    background: #000080;
+    color: #ffffff;
+    border: 2px inset #808080;
     text-shadow: none;
 }
 
@@ -1230,17 +1242,16 @@ body.ultra-chaos .intro {
         font-size: 13px;
     }
 
-    .slider-wrapper {
+    .mode-buttons {
         flex-direction: column;
-        gap: 12px;
+        gap: 8px;
+        padding: 12px;
     }
 
-    .chaos-slider {
+    .mode-btn {
         width: 100%;
-    }
-
-    .level-label {
-        font-size: 11px;
+        font-size: 14px;
+        padding: 10px 16px;
     }
 
     /* Ultra chaos mode mobile overrides */

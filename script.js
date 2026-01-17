@@ -66,6 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Set initial mode to nutters (cyberpunk chaos)
-    window.setMode('nutters');
+    // Set initial mode to normal (clean blog style)
+    window.setMode('normal');
 });

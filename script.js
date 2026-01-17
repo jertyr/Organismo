@@ -13,15 +13,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Ultra Chaos Mode Toggle
-function toggleChaos() {
+window.toggleChaos = function() {
+    console.log('Toggle chaos called!'); // Debug
     const body = document.body;
     const button = document.getElementById('chaosButton');
     const buttonText = document.getElementById('chaosText');
 
     if (body.classList.contains('ultra-chaos')) {
+        console.log('Deactivating chaos mode');
         body.classList.remove('ultra-chaos');
         buttonText.textContent = '⚡ ACTIVATE ULTRA CHAOS MODE ⚡';
     } else {
+        console.log('Activating ULTRA CHAOS MODE!');
         body.classList.add('ultra-chaos');
         buttonText.textContent = '🛑 DEACTIVATE ULTRA CHAOS MODE 🛑';
 
@@ -31,3 +34,13 @@ function toggleChaos() {
         console.log('Everything is spinning and rainbow now!');
     }
 }
+
+// Also set up event listener as backup
+document.addEventListener('DOMContentLoaded', function() {
+    const chaosButton = document.getElementById('chaosButton');
+    if (chaosButton) {
+        chaosButton.addEventListener('click', function() {
+            window.toggleChaos();
+        });
+    }
+});

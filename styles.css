@@ -705,12 +705,13 @@ footer p {
 }
 
 /* ========================================
-   NORMAL MODE - Classic Sim City 2000 Aesthetic
+   NORMAL MODE - Clean Print Blog Style
    ======================================== */
 
 body.sim-city-mode {
-    background: #008080 !important;
-    color: #000 !important;
+    background: #f5f3ed !important;
+    color: #2c2c2c !important;
+    font-family: Georgia, 'Times New Roman', serif !important;
     cursor: default !important;
     animation: none !important;
 }
@@ -720,285 +721,337 @@ body.sim-city-mode::before {
 }
 
 body.sim-city-mode .container {
-    background: #c0c0c0 !important;
-    border: 3px outset #dfdfdf !important;
-    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3) !important;
+    background: #ffffff !important;
+    border: 1px solid #d4d0c8 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
     animation: none !important;
+    max-width: 800px !important;
 }
 
 body.sim-city-mode .container::before {
-    content: "SimConstruction 2000";
-    top: -30px;
-    background: #c0c0c0;
-    color: #000;
-    padding: 4px 12px;
-    font-size: 11px;
-    border: 2px outset #dfdfdf;
-    animation: none;
+    display: none !important;
 }
 
 body.sim-city-mode .container::after {
-    display: none;
+    display: none !important;
 }
 
 body.sim-city-mode header {
-    background: linear-gradient(180deg, #0a246a 0%, #000080 100%) !important;
-    border-bottom: 0 !important;
-    border: 2px outset #dfdfdf !important;
+    background: #ffffff !important;
+    border-bottom: 3px solid #2c2c2c !important;
     animation: none !important;
     margin: 0 !important;
+    padding: 40px 40px 30px !important;
 }
 
 body.sim-city-mode header::before {
-    content: "🏗";
-    color: rgba(255, 255, 255, 0.3);
-    animation: none;
+    display: none !important;
 }
 
 body.sim-city-mode header::after {
-    display: none;
+    display: none !important;
 }
 
 body.sim-city-mode h1 {
-    color: #ffffff !important;
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5) !important;
+    color: #2c2c2c !important;
+    text-shadow: none !important;
     animation: none !important;
-    font-size: 42px !important;
-    letter-spacing: 4px !important;
+    font-size: 48px !important;
+    letter-spacing: -1px !important;
+    font-weight: 700 !important;
+    font-family: Georgia, 'Times New Roman', serif !important;
 }
 
 body.sim-city-mode .subtitle {
-    background-color: #c0c0c0;
-    color: #000;
-    border: 2px outset #dfdfdf;
-    box-shadow: none;
-    text-shadow: none;
-    padding: 6px 12px;
+    background-color: transparent !important;
+    color: #666 !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    padding: 0 !important;
+    font-size: 16px !important;
+    font-style: italic !important;
+    font-family: Georgia, 'Times New Roman', serif !important;
 }
 
 body.sim-city-mode .intro {
-    background-color: #ffffff;
-    color: #000;
-    border: 2px inset #808080;
-    box-shadow: none;
-    text-shadow: none;
+    background-color: #faf9f6 !important;
+    color: #2c2c2c !important;
+    border: none !important;
+    border-left: 4px solid #8b7355 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    font-family: Georgia, 'Times New Roman', serif !important;
+    padding: 20px 24px !important;
 }
 
 body.sim-city-mode .intro::before {
-    color: #000080;
+    display: none !important;
 }
 
 body.sim-city-mode .intro a {
-    color: #000080;
-    border-bottom: 1px solid #000080;
-    text-shadow: none;
+    color: #8b4513 !important;
+    border-bottom: 1px solid #8b4513 !important;
+    text-shadow: none !important;
+    background: none !important;
 }
 
 body.sim-city-mode .intro a:hover {
-    background-color: #000080;
-    color: #ffffff;
-    box-shadow: none;
+    background-color: transparent !important;
+    color: #5a2d0c !important;
+    border-bottom: 2px solid #5a2d0c !important;
+    box-shadow: none !important;
 }
 
 body.sim-city-mode main {
-    background-color: #c0c0c0 !important;
+    background-color: #ffffff !important;
+    padding: 20px 40px 40px !important;
 }
 
 body.sim-city-mode section {
-    background: #c0c0c0 !important;
-    border: 3px outset #dfdfdf !important;
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2) !important;
+    background: #ffffff !important;
+    border: none !important;
+    border-bottom: 1px solid #e8e6e0 !important;
+    box-shadow: none !important;
     transform: none !important;
-    transition: all 0.2s !important;
+    transition: none !important;
+    padding: 30px 0 !important;
+}
+
+body.sim-city-mode section:last-of-type {
+    border-bottom: none !important;
 }
 
 body.sim-city-mode section:hover {
-    border-style: outset;
-    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+    background: #ffffff !important;
+    border-bottom: 1px solid #e8e6e0 !important;
+    box-shadow: none !important;
     transform: none !important;
 }
 
 body.sim-city-mode h2 {
-    background: linear-gradient(180deg, #0a246a 0%, #000080 100%) !important;
-    color: #ffffff !important;
-    border-bottom: 0 !important;
-    border: 2px outset #000080 !important;
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5) !important;
+    background: transparent !important;
+    color: #2c2c2c !important;
+    border-bottom: none !important;
+    border: none !important;
+    text-shadow: none !important;
     animation: none !important;
+    font-family: Georgia, 'Times New Roman', serif !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.5px !important;
+    margin-bottom: 20px !important;
 }
 
 body.sim-city-mode h2::before,
 body.sim-city-mode h2::after {
-    display: none;
+    display: none !important;
 }
 
 body.sim-city-mode h3 {
-    color: #000080;
-    text-shadow: none;
+    color: #2c2c2c !important;
+    text-shadow: none !important;
+    font-family: Georgia, 'Times New Roman', serif !important;
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
 }
 
 body.sim-city-mode p {
-    color: #000;
-    text-shadow: none;
+    color: #3a3a3a !important;
+    text-shadow: none !important;
+    font-family: Georgia, 'Times New Roman', serif !important;
+    font-size: 17px !important;
+    line-height: 1.7 !important;
 }
 
 body.sim-city-mode a {
-    color: #000080;
-    border-bottom: 1px solid #000080;
-    text-shadow: none;
+    color: #8b4513 !important;
+    border-bottom: 1px solid #8b4513 !important;
+    text-shadow: none !important;
+    background: none !important;
 }
 
 body.sim-city-mode a:hover {
-    color: #ffffff;
-    background-color: #000080;
-    box-shadow: none;
+    color: #5a2d0c !important;
+    background-color: transparent !important;
+    border-bottom: 2px solid #5a2d0c !important;
+    box-shadow: none !important;
 }
 
 body.sim-city-mode .post-tile {
-    background: #ffffff;
-    border: 2px inset #808080;
+    background: #fafafa !important;
+    border: none !important;
+    border-left: 3px solid #d4d0c8 !important;
     transform: none !important;
-    padding: 12px;
+    padding: 20px !important;
+    margin-bottom: 16px !important;
 }
 
 body.sim-city-mode .post-tile:hover {
-    border: 2px outset #dfdfdf;
-    box-shadow: none;
+    border-left: 3px solid #8b7355 !important;
+    background: #f5f3ed !important;
+    box-shadow: none !important;
     transform: none !important;
-    background: #f0f0f0;
 }
 
 body.sim-city-mode .post-tile::before {
-    display: none;
+    display: none !important;
 }
 
 body.sim-city-mode .post-meta {
-    background-color: #c0c0c0;
-    color: #000;
-    border: 2px outset #dfdfdf;
-    box-shadow: none;
-    font-size: 9px;
+    background-color: transparent !important;
+    color: #888 !important;
+    border: none !important;
+    box-shadow: none !important;
+    font-size: 12px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    font-family: 'Courier New', monospace !important;
 }
 
 body.sim-city-mode .post-tile h3 a {
-    color: #000080;
-    border-bottom: 1px solid transparent;
+    color: #2c2c2c !important;
+    border-bottom: none !important;
+    font-family: Georgia, 'Times New Roman', serif !important;
 }
 
 body.sim-city-mode .post-tile h3 a:hover {
-    color: #ffffff;
-    background-color: #000080;
-    text-shadow: none;
+    color: #8b4513 !important;
+    background-color: transparent !important;
+    text-shadow: none !important;
+    border-bottom: 1px solid #8b4513 !important;
 }
 
 body.sim-city-mode .post-tile p {
-    color: #000;
+    color: #4a4a4a !important;
+    font-size: 16px !important;
 }
 
 body.sim-city-mode .read-more {
-    color: #000080;
-    border-bottom: 1px solid #000080;
+    color: #8b4513 !important;
+    border-bottom: 1px solid #8b4513 !important;
 }
 
 body.sim-city-mode .read-more:hover {
-    color: #ffffff;
-    background-color: #000080;
-    box-shadow: none;
+    color: #5a2d0c !important;
+    background-color: transparent !important;
+    border-bottom: 2px solid #5a2d0c !important;
+    box-shadow: none !important;
 }
 
 body.sim-city-mode .project {
-    background: #ffffff;
-    border: 3px inset #808080;
-    transition: all 0.2s;
+    background: #fafafa !important;
+    border: none !important;
+    border-left: 4px solid #8b7355 !important;
+    transition: all 0.2s !important;
     transform: none !important;
-    padding: 16px;
+    padding: 24px !important;
+    margin-bottom: 24px !important;
 }
 
 body.sim-city-mode .project:hover {
-    border: 3px outset #dfdfdf;
-    background: #f0f0f0;
-    box-shadow: none;
+    border-left: 4px solid #8b4513 !important;
+    background: #f5f3ed !important;
+    box-shadow: none !important;
     transform: none !important;
 }
 
 body.sim-city-mode .project::before {
-    display: none;
+    display: none !important;
 }
 
 body.sim-city-mode .project h3 {
-    background: linear-gradient(180deg, #0a246a 0%, #000080 100%);
-    color: #ffffff;
-    border: 2px outset #000080;
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+    background: transparent !important;
+    color: #2c2c2c !important;
+    border: none !important;
+    text-shadow: none !important;
+    font-size: 24px !important;
+    margin-bottom: 12px !important;
 }
 
 body.sim-city-mode .project h3::before {
-    display: none;
+    display: none !important;
 }
 
 body.sim-city-mode .project h3 a {
-    color: #ffffff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    color: #2c2c2c !important;
+    border-bottom: 1px solid #8b7355 !important;
 }
 
 body.sim-city-mode .project h3 a:hover {
-    background-color: #0a246a;
-    box-shadow: none;
+    background-color: transparent !important;
+    color: #8b4513 !important;
+    border-bottom: 2px solid #8b4513 !important;
+    box-shadow: none !important;
 }
 
 body.sim-city-mode .project p {
-    color: #000;
+    color: #4a4a4a !important;
 }
 
 body.sim-city-mode #contact p {
-    background: #ffffff;
-    border: 2px inset #808080;
-    box-shadow: none;
+    background: #fafafa !important;
+    border: none !important;
+    border-left: 3px solid #d4d0c8 !important;
+    box-shadow: none !important;
+    padding: 16px 20px !important;
 }
 
 body.sim-city-mode footer {
-    background: #c0c0c0 !important;
-    border-top: 3px outset #dfdfdf !important;
+    background: #f5f3ed !important;
+    border-top: 1px solid #d4d0c8 !important;
     animation: none !important;
+    padding: 30px 40px !important;
 }
 
 body.sim-city-mode footer::before {
-    display: none;
+    display: none !important;
 }
 
 body.sim-city-mode footer p {
-    color: #000;
-    background-color: #c0c0c0;
-    border: 2px outset #dfdfdf;
-    box-shadow: none;
-    text-shadow: none;
+    color: #666 !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    font-size: 14px !important;
 }
 
 body.sim-city-mode .mode-buttons {
-    border: 2px inset #808080;
-    box-shadow: none;
-    background: #c0c0c0;
+    border: 1px solid #d4d0c8 !important;
+    box-shadow: none !important;
+    background: #fafafa !important;
+    padding: 12px !important;
 }
 
 body.sim-city-mode .mode-btn {
-    background: #c0c0c0;
-    color: #000;
-    border: 2px outset #dfdfdf;
-    box-shadow: none;
-    text-shadow: none;
+    background: #ffffff !important;
+    color: #2c2c2c !important;
+    border: 1px solid #d4d0c8 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    font-family: 'Courier New', monospace !important;
+    font-size: 12px !important;
+    padding: 8px 16px !important;
 }
 
 body.sim-city-mode .mode-btn:hover {
-    background: #dfdfdf;
-    color: #000;
-    border: 2px outset #ffffff;
+    background: #f5f3ed !important;
+    color: #2c2c2c !important;
+    border: 1px solid #8b7355 !important;
 }
 
 body.sim-city-mode .mode-btn.active {
-    background: #000080;
-    color: #ffffff;
-    border: 2px inset #808080;
-    text-shadow: none;
+    background: #2c2c2c !important;
+    color: #ffffff !important;
+    border: 1px solid #2c2c2c !important;
+    text-shadow: none !important;
+}
+
+body.sim-city-mode .mode-btn.active::before,
+body.sim-city-mode .mode-btn.active::after {
+    display: none !important;
 }
 
 /* ========================================

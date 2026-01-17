@@ -709,7 +709,7 @@ footer p {
    ======================================== */
 
 body.sim-city-mode {
-    background: #ffffff !important;
+    background: #f5f3ed !important;
     color: #2c2c2c !important;
     font-family: Georgia, 'Times New Roman', serif !important;
     cursor: default !important;
@@ -726,7 +726,7 @@ body.sim-city-mode .container {
     box-shadow: none !important;
     animation: none !important;
     max-width: 720px !important;
-    padding: 0 !important;
+    padding: 0 40px !important;
 }
 
 body.sim-city-mode .container::before {
@@ -1094,6 +1094,95 @@ body.sim-city-mode .mode-btn.active {
 body.sim-city-mode .mode-btn.active::before,
 body.sim-city-mode .mode-btn.active::after {
     display: none !important;
+}
+
+/* Normal Mode - Mobile Responsive */
+@media (max-width: 768px) {
+    body.sim-city-mode .container {
+        padding: 0 24px !important;
+    }
+
+    body.sim-city-mode header {
+        padding: 40px 0 16px !important;
+        margin: 0 0 30px 0 !important;
+    }
+
+    body.sim-city-mode h1 {
+        font-size: 36px !important;
+    }
+
+    body.sim-city-mode .subtitle {
+        font-size: 16px !important;
+    }
+
+    body.sim-city-mode .intro {
+        font-size: 17px !important;
+        padding: 0 0 24px 0 !important;
+    }
+
+    body.sim-city-mode section {
+        padding: 0 0 35px 0 !important;
+        margin: 0 0 35px 0 !important;
+    }
+
+    body.sim-city-mode h2 {
+        font-size: 24px !important;
+        margin-bottom: 18px !important;
+    }
+
+    body.sim-city-mode h3 {
+        font-size: 19px !important;
+    }
+
+    body.sim-city-mode p {
+        font-size: 17px !important;
+        margin-bottom: 16px !important;
+    }
+
+    body.sim-city-mode .post-tile {
+        padding: 0 0 20px 0 !important;
+        margin-bottom: 20px !important;
+    }
+
+    body.sim-city-mode .project {
+        padding: 0 0 24px 0 !important;
+        margin-bottom: 24px !important;
+    }
+
+    body.sim-city-mode footer {
+        padding: 24px 0 32px !important;
+        margin-top: 40px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    body.sim-city-mode .container {
+        padding: 0 20px !important;
+    }
+
+    body.sim-city-mode header {
+        padding: 32px 0 14px !important;
+        margin: 0 0 24px 0 !important;
+    }
+
+    body.sim-city-mode h1 {
+        font-size: 32px !important;
+    }
+
+    body.sim-city-mode section {
+        padding: 0 0 28px 0 !important;
+        margin: 0 0 28px 0 !important;
+    }
+
+    body.sim-city-mode h2 {
+        font-size: 22px !important;
+        margin-bottom: 16px !important;
+    }
+
+    body.sim-city-mode footer {
+        padding: 20px 0 28px !important;
+        margin-top: 32px !important;
+    }
 }
 
 /* ========================================

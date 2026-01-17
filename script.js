@@ -33,10 +33,12 @@ window.setMode = function(mode) {
         case 'normal':
             body.classList.add('sim-city-mode');
             console.log('Normal mode activated - Classic Sim City 2000 aesthetic');
+            console.log('Body classes:', body.className);
             break;
         case 'nutters':
             // Default cyberpunk chaos - no class needed
             console.log('Nutters mode - Cyberpunk construction chaos');
+            console.log('Body classes:', body.className);
             break;
         case 'mayhem':
             body.classList.add('ultra-chaos');
@@ -44,6 +46,7 @@ window.setMode = function(mode) {
             console.log('Warning: Maximum chaos levels detected!');
             console.log('Everything is spinning and rainbow now!');
             console.log('Comic Sans has been deployed!');
+            console.log('Body classes:', body.className);
             break;
     }
 };

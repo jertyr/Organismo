@@ -13,7 +13,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Mode switching functionality
-function setMode(mode) {
+window.setMode = function(mode) {
     const body = document.body;
     const buttons = document.querySelectorAll('.mode-btn');
 
@@ -46,19 +46,23 @@ function setMode(mode) {
             console.log('Comic Sans has been deployed!');
             break;
     }
-}
+};
 
 // Set up button event listeners
 document.addEventListener('DOMContentLoaded', function() {
     const modeButtons = document.querySelectorAll('.mode-btn');
 
+    console.log('Found ' + modeButtons.length + ' mode buttons');
+
     modeButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
             const mode = this.getAttribute('data-mode');
-            setMode(mode);
+            console.log('Button clicked: ' + mode);
+            window.setMode(mode);
         });
     });
 
     // Set initial mode to nutters (cyberpunk chaos)
-    setMode('nutters');
+    window.setMode('nutters');
 });

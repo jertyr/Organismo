@@ -625,6 +625,38 @@ footer::before {
     animation: constructionBlink 1.5s infinite;
 }
 
+.chaos-toggle {
+    margin-bottom: 20px;
+}
+
+.chaos-toggle button {
+    background: linear-gradient(45deg, #FF00FF, #00FFFF, #FFFF00, #FF00FF);
+    background-size: 300% 300%;
+    animation: gradientShift 2s ease infinite;
+    color: #000;
+    border: 4px solid #000;
+    padding: 16px 32px;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
+    transition: all 0.3s;
+}
+
+.chaos-toggle button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 1);
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 footer p {
     font-size: 12px;
     color: #00FF00;
@@ -637,6 +669,164 @@ footer p {
     text-transform: uppercase;
     box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
     text-shadow: 0 0 10px #00FF00;
+}
+
+/* ========================================
+   ULTRA CHAOS MODE - ENTER AT YOUR OWN RISK
+   ======================================== */
+
+@keyframes ultraShake {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    10% { transform: translate(-5px, 5px) rotate(-2deg); }
+    20% { transform: translate(5px, -5px) rotate(2deg); }
+    30% { transform: translate(-5px, -5px) rotate(-1deg); }
+    40% { transform: translate(5px, 5px) rotate(1deg); }
+    50% { transform: translate(-5px, 0) rotate(-2deg); }
+    60% { transform: translate(5px, -5px) rotate(2deg); }
+    70% { transform: translate(-5px, 5px) rotate(-1deg); }
+    80% { transform: translate(5px, 0) rotate(1deg); }
+    90% { transform: translate(-5px, -5px) rotate(-2deg); }
+}
+
+@keyframes rainbowText {
+    0% { color: #FF0000; text-shadow: 0 0 20px #FF0000; }
+    16% { color: #FF00FF; text-shadow: 0 0 20px #FF00FF; }
+    33% { color: #0000FF; text-shadow: 0 0 20px #0000FF; }
+    50% { color: #00FFFF; text-shadow: 0 0 20px #00FFFF; }
+    66% { color: #00FF00; text-shadow: 0 0 20px #00FF00; }
+    83% { color: #FFFF00; text-shadow: 0 0 20px #FFFF00; }
+    100% { color: #FF0000; text-shadow: 0 0 20px #FF0000; }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes strobe {
+    0%, 100% { opacity: 1; background-color: #000; }
+    25% { opacity: 0.5; background-color: #FF00FF; }
+    50% { opacity: 1; background-color: #00FFFF; }
+    75% { opacity: 0.5; background-color: #FFFF00; }
+}
+
+body.ultra-chaos {
+    animation: strobe 0.5s infinite, ultraShake 0.3s infinite;
+    font-family: 'Comic Sans MS', cursive, sans-serif !important;
+}
+
+body.ultra-chaos * {
+    font-family: 'Comic Sans MS', cursive, sans-serif !important;
+}
+
+body.ultra-chaos .container {
+    animation: ultraShake 0.5s infinite, spin 20s linear infinite;
+    border: 8px solid;
+    border-image: linear-gradient(45deg, #FF0000, #FF00FF, #0000FF, #00FFFF, #00FF00, #FFFF00, #FF0000) 1;
+    border-image-slice: 1;
+}
+
+body.ultra-chaos .container::before {
+    content: "🔥🔥🔥 MAXIMUM CHAOS ACTIVATED 🔥🔥🔥";
+    animation: rainbowText 1s infinite, bounce 0.5s infinite;
+    font-size: 18px;
+}
+
+body.ultra-chaos h1 {
+    animation: rainbowText 0.5s infinite, ultraShake 0.2s infinite, spin 2s linear infinite;
+    font-size: 60px !important;
+}
+
+body.ultra-chaos h2 {
+    animation: rainbowText 0.7s infinite, pulse 0.5s infinite;
+}
+
+body.ultra-chaos h3 {
+    animation: rainbowText 1s infinite;
+}
+
+body.ultra-chaos header {
+    animation: ultraShake 0.3s infinite;
+    background: linear-gradient(45deg, #FF0000, #FF00FF, #0000FF, #00FFFF, #00FF00, #FFFF00);
+    background-size: 400% 400%;
+    animation: gradientShift 0.5s ease infinite, ultraShake 0.3s infinite;
+}
+
+body.ultra-chaos header::before {
+    animation: spin 0.5s linear infinite !important;
+    font-size: 120px !important;
+}
+
+body.ultra-chaos section {
+    animation: ultraShake 0.4s infinite, pulse 1s infinite;
+    transform: none !important;
+}
+
+body.ultra-chaos section:nth-child(odd) {
+    animation: ultraShake 0.4s infinite, pulse 1s infinite, spin 10s linear infinite;
+}
+
+body.ultra-chaos section:nth-child(even) {
+    animation: ultraShake 0.4s infinite, pulse 1s infinite, spin 10s linear infinite reverse;
+}
+
+body.ultra-chaos .post-tile {
+    animation: rainbowText 0.8s infinite, bounce 0.6s infinite;
+}
+
+body.ultra-chaos .post-tile::before {
+    content: "🚨";
+    animation: spin 0.5s linear infinite;
+    font-size: 40px !important;
+}
+
+body.ultra-chaos .project {
+    animation: ultraShake 0.3s infinite, spin 5s linear infinite;
+}
+
+body.ultra-chaos .project::before {
+    content: "💥";
+    font-size: 150px !important;
+    opacity: 0.5 !important;
+    animation: spin 1s linear infinite, pulse 0.5s infinite;
+}
+
+body.ultra-chaos a {
+    animation: rainbowText 0.3s infinite;
+}
+
+body.ultra-chaos p {
+    animation: rainbowText 2s infinite;
+}
+
+body.ultra-chaos footer {
+    animation: ultraShake 0.4s infinite;
+    background: linear-gradient(45deg, #FF0000, #FF00FF, #0000FF, #00FFFF, #00FF00, #FFFF00);
+    background-size: 400% 400%;
+    animation: gradientShift 0.3s ease infinite, ultraShake 0.4s infinite;
+}
+
+body.ultra-chaos .chaos-toggle button {
+    animation: spin 2s linear infinite, pulse 0.5s infinite;
+    font-size: 20px !important;
+}
+
+body.ultra-chaos .subtitle {
+    animation: bounce 0.3s infinite, rainbowText 0.5s infinite;
+}
+
+body.ultra-chaos .intro {
+    animation: pulse 0.6s infinite;
 }
 
 /* Responsive */
